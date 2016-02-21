@@ -4,5 +4,3 @@
 ## Abstract
 
 ## Acknowledgements
-
-## Why now?

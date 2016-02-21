@@ -1,20 +1,27 @@
 
 # Basic Design Pattern Knowledge
 
+## Building Blocks
+
+### The Observer Pattern
+
+
+# Overview of several common patterns
+
 ## MVVM
 
 ### Theory
 
-### Implementation
+### Implementation in Android
 
 ## MVP
 
 ### Theory
 
-### Implementation
+### Implementation in Android
 
 ## MVC
 
 ### Theory
 
-### Implementation
+### Implementation in Android

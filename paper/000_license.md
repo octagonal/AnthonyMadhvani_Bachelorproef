@@ -1,5 +1,5 @@
 
-# Licence
+### Licence
 
 ![](paper/img/license.png)
 
