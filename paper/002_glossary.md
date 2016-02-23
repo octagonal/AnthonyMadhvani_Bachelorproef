@@ -3,13 +3,19 @@
 
 Word  | Definition
 --|--
-Design Pattern  |  sfsdfdf
-MVP  |  sfsdfdf
-MVC  |  sfsdfdf
-Java  |  sfsdfdf
-Android  |  sfsdfdf
-Behavioral Pattern |sfsdfdf  
-Implementation  |  sfsdfdf
-Asynchronous  |  sfsdfdf
-Activity  |  sfsdfdf
-Fragment  |  sfsdfdf
+Design Pattern  |  
+Behavioral Pattern |
+Architectural Pattern |
+MVP  |  
+MVC  |  
+Flux |
+Dagger |
+RxJava |
+Java  |  
+Android  |  
+Implementation  |  
+Asynchronous  |  
+Activity |  
+Fragment |  
+Open layer |  
+Closed layer |  
