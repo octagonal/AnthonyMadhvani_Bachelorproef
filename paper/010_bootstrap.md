@@ -109,23 +109,3 @@ Since all commands are sent using the same type of class, it would be trivial to
       //total = 9
       Calculator.getLastOperations().undo()
       //total = 5
-
-# Overview of several common patterns
-
-## MVVM
-
-### Theory
-
-### Implementation in Android
-
-## MVP
-
-### Theory
-
-### Implementation in Android
-
-## MVC
-
-### Theory
-
-### Implementation in Android
