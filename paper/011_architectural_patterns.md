@@ -25,6 +25,6 @@
 
 ### Theory
 
-![MVVM](http://i.imgur.com/a4vBMHr.png)
+![MVVM](http://i.imgur.com/xWkLIte.png)
 
 ### Implementation in Android
