@@ -43,9 +43,30 @@ Communication in this way allows for a high degree of decoupling while still pro
  
 The mediator pattern is another pattern whose main benefit is increased decoupling of application components. Using this pattern, a level of indirection is created such that objects do not communicate directly with each other.
 
-A `mediator` will have one or more `components` that need to be informed about changes to any other `component` whenever one `component` sends a message. Where the observer pattern will have a *one to many* relation, the mediator pattern will have a *one to one to many* relation. Another big difference between the two is that by using the observer pattern, direct communication between objects still exists. Using a mediator, the become unlinked.
+    interface IMediator
+        void ChangeState()
+        
+     BrushDip extends IComponent
+         void ChangeState(BrushType){
+           ChangeBrush(brushType)
+         }
 
-[TODO: CODE VOORBEELD]
+A `mediator` will have one or more `components` that need to be informed about changes to any other `component` whenever one `component` sends a message. Where the observer pattern will have a *one to many* relation, the mediator pattern will have a *one to one to many* relation. Another big difference between the two is that by using the observer pattern, direct communication between objects still exists. Using a mediator, they become unlinked.
+         
+     Paint extends IComponent
+         void ChangeState(PaintColor){
+           paintOnCanvas(paintColor)
+         }
+     
+     MakePaintingMediator extends IMediator
+         void ChangeState(){
+            brushDip.ChangeState(BrushType.random())
+            paint.ChangeState(PaintColor.random())
+         }
+     
+     //The brush no longer needs to directly communicate with the paint, increasing decoupling
+     MakePaintingMediator artist = new MakePaintingMediator()
+     artist.ChangeState()
 
 Also note that the usefulness of the observer pattern can already be demonstrated here: using an observer, a mediator could notify all of its components about an event from any other component using a standard and easy to implement interface. 
 
