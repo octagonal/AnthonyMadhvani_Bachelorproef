@@ -77,7 +77,7 @@ The command pattern encapsulates methods using an object in order to provide a s
     interface ICommand
         void execute()
 
-One of the biggest benefit is being able to queue a list of commands and letting another object execute them one by one. It would for example be possible to place a series of various network calls (loading images, loading HTML) in a list, and letting the object that receives those commands choose wether or not to request them one by one or in parallel.
+One of the biggest benefits is being able to queue a list of commands and letting another object execute them one by one. It would for example be possible to place a series of various network calls (loading images, loading HTML) in a list, and letting the object that receives those commands choose wether or not to request them one by one or in parallel.
 
     class Command extends ICommand
       public Command(Sum sum, int one, int two)
