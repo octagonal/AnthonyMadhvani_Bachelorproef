@@ -15,10 +15,28 @@ It can be thought of as a way to connect objects that want to be informed about 
 
 The `subject` will have a method available to notify its observers and the observers will have a method available to subscribe to the events that the `subject` publishes.
 
+     ISubject
+      void notifyObservers()
+      void registerObserver(IObserver)
+      
+     IObserver
+      void notify(ISubject)
+
 Say for example, an object called `Weather` exists that notifies anyone listening about changes in temperature. A `Weatherman` object would then subscribe to `Weather` in order to react to changes in weather.
 
-[TODO: CODE VOORBEELD]
-
+    Weather extends ISubject
+    
+    Weatherman extends IObserver
+      void notify(ISubject weather)
+        makeWeatherAnnouncement(weather.getLatestWeather)
+        
+    Weather weather = new Weather()
+    Weatherman weatherman = new Weatherman()
+    
+    weather.registerObserver(weatherman)
+    weather.setLasterWeather("It's raining")
+    weather.notifyObservers()
+    
 Communication in this way allows for a high degree of decoupling while still providing certainty about being notified.
 
 ### The Mediator Pattern
@@ -35,8 +53,7 @@ Also note that the usefulness of the observer pattern can already be demonstrate
 
 The command pattern encapsulates methods using an object in order to provide a standard way to handle events and data. Implementation wise a `Command` class will have a method `execute`. 
 
-
-    class ICommand
+    interface ICommand
         void execute()
 
 One of the biggest benefit is being able to queue a list of commands and letting another object execute them one by one. It would for example be possible to place a series of various network calls (loading images, loading HTML) in a list, and letting the object that receives those commands choose wether or not to request them one by one or in parallel.
@@ -49,19 +66,28 @@ One of the biggest benefit is being able to queue a list of commands and letting
       }
         
 
-Since all commands are sent using the same type of class, it would be trivial to for example implement an `undo` method as well. 
+Since all commands are sent using the same type of class, it would be trivial to for example implement an `undo` method as well. Using this pattern, implementing a calculator that can easily do and undo operations becomes trivial.
   
-    class Command extends ICommand
+    class SumCommand extends ICommand
       public Command(int total, int one, int two)
         
       void execute(){
         previousValue = total
-        total = one + two)    
+        total += one + two    
       }
       
       void undo(){
         total = previousValue
       }
+      
+      SumCommand sumCommand = new SumCommand(5, 2, 2);
+      Calculator.addCommand(sumCommand)
+      
+      //total = 5
+      Calculator.executeLatestOperation()
+      //total = 9
+      Calculator.getLastOperations().undo()
+      //total = 5
 
 # Overview of several common patterns
 
