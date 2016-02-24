@@ -37,19 +37,23 @@ Using their API, an app will be constructed that allows users to browse art and 
 
 The following figure shows how the user will interact with the application and go from one activity to the next.
 
-## What's out of scope
-
 ## Quality measurement
 
-### Performance
+This list of metrics was adapted from *Code Quality: The Open Source Perspective*, which won the 2007 Software Development Productivity Award.
 
-Performance will be measured using Android Studio's built-in profiler. This has a number of benefits including that every pattern can be tested on a standard set of devices. This allows us to ignore device-specific Android versions, such as Samsung, which tend to have some differences from the standard OS [Link naar samsung bugs].
+### Efficiency and resource utilization
+
+Efficiency will be measured using Android Studio's built-in profiler. This has a number of benefits including that every pattern can be tested on a standard set of devices. This allows us to ignore device-specific Android versions, such as Samsung, which tend to have some differences from the standard OS [Link naar samsung bugs].
 
 In order to provide examples that are both usable in the real world and easy to demonstrate, only the latest version of Android will be tested on. Currently this is 6.0.
 
-### Development speed
+### Decoupling
 
-This is more difficult to measure but certainly useful.
+### Testability
+
+### Fault tolerance
+
+### Extendability
 
 ### Verbosity of code
 
