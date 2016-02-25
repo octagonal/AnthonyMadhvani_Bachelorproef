@@ -1,7 +1,7 @@
 
 # Overview of several common patterns
 
-This chapter will take a deep dive into various common architectural patterns. 
+This chapter will take a deep dive into various common architectural patterns and a high level view of their implementation in Android. 
 
 ## Diagram conventions
 
@@ -14,6 +14,10 @@ b) A component is an object or a set of objects that form a coherent whole. It i
 c) A leader message happens when one component can request changes to another component.
 
 d) A peer message happens when two components are dependent on each other. A *unidirectional* flow of state is possible under this relationship.
+
+* Sometimes a light background color will be used on a component to visualize how it is not equally important to the other components.
+
+* I*Classname* signifies an interface.
 
 ## MVC
 
@@ -33,6 +37,12 @@ That is not to say MVC is a useless abstraction model. It lends itself quite wel
 
 ### Implementation in Android
 
+As was previously explained, the entry point in MVC is the controller and not the view. One some platforms like the web this is excellent, since all HTTP requests are handled by the server (the controller) before being displayed in the browser (the view). The mapping from theory to implementation is less straightforward in Android however: the entry point is an Intent which points to an activity (the view). 
+
+This makes it necessary to create workarounds or not follow along with the pattern too closely. 
+
+![MVC Implementation](http://i.imgur.com/A48s57B.png)
+
 ## MVP
 
 *Model, view, presenter.*
@@ -43,11 +53,15 @@ Invented in the early 1990's, when software companies were seeing a huge increas
 
 MVP is essentially a variation on MVC using a different control flow. However, a big improvement on MVC is that under MVP the view has absolutely no knowledge of the model. This is what *presenter* takes care of: this component prepares data from the model for the view. While this seems like a small difference, the separation between view and model ensures that no dependencies can arise between them. This in itself is an important improvement that increases decoupling. 
 
-Unlike MVC, the entry point is the presenter. The view and the presenter have a one on one mapping which means they both share knowledge of each other. 
+Unlike MVC, the entry point is the presenter. The view and the presenter have a one-on-one mapping which means they both share knowledge of each other. 
 
 ![MVP](http://i.imgur.com/t1LFdlO.png)
 
 ### Implementation in Android
+
+Using MVP, it is possible to strictly obey the pattern guidelines since user interaction originates with the view. It should also be noted that because views and presenters have a one-on-one mapping, using interfaces is not immediately required. 
+
+![MVP Implementation](http://i.imgur.com/PtXai2Z.png)
 
 ## MVVM
 
@@ -68,3 +82,7 @@ What this means is that unlike MVP, a viewmodel could potentially be shared with
 ![MVVM](http://i.imgur.com/xWkLIte.png)
 
 ### Implementation in Android
+
+Similar to MVP, the MVVM patterns fits quite well into Android. Of interest is also that a databinding library was recently introduced to Android which makes it much easier to use MVVM. Another important fact to note is that the Activity itself becomes nothing more than a connector to the layout resource file and the object which holds on to the Android lifecycle. 
+
+![MVVM Implementation](http://i.imgur.com/fwVX3cm.png)
