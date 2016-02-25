@@ -9,9 +9,32 @@ Readers are encouraged to follow along and develop the sample application as wel
 
 ## The Google Way
 
-## MVP
+### Project setup
 
-## MVC
+### Development
+
+### Conclusion
+
+## MVP using Mortar
+
+### Project setup
+
+### Development
+
+### Conclusion
+
+## MVVM
+
+### Project setup
+
+### Development
+
+### Conclusion
 
 ## Flux
 
+### Project setup
+
+### Development
+
+### Conclusion
