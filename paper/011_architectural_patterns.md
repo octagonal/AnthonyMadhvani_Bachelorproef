@@ -1,5 +1,5 @@
 
-# Overview of several common patterns
+# Overview of Several Common Patterns
 
 This chapter will take a deep dive into various common architectural patterns and a high level view of their implementation in Android. 
 
