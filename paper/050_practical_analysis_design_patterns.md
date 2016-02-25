@@ -13,6 +13,16 @@ Having developed the application, the various architectures will now be examined
 
 ### Flux
 
+## Android lifecycle management
+
+### MVP
+
+### Google way
+
+### MVVM
+
+### Flux
+
 ## Testability
 
 ### MVP
