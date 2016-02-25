@@ -1,5 +1,5 @@
 
-# The example app
+# The Example App
 
 In order to give a fair representation of each development method's benefits and downsides,
 a single app will be built each time using a different design pattern. This will, among other things,
