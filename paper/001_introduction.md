@@ -11,8 +11,22 @@ Databinding, functional reactive programming, stores and dispatchers: an Android
 
 Technically, this thesis is about figuring out how to implement architectural design patterns on the Android framework. But it's real purpose is being able to match the stringent requirements put upon development teams and their applications with the right set of tools and abstractions. 
 
-## Abstract
+## Thesis Outline
 
-## Acknowledgements
+This thesis is divided into two major parts. 
 
-I would first of all like to thank my thesis promotor Mr. Walcarius for continuously assisting and guiding me throughout the process of writing this thesis.
+The first part is preparatory and describes several design patterns and how they are applied in Android. This part also dedicates a chapter to the importance of correct tool and library usage.
+
+* Chapter 1 (*Basic Design Pattern Knowledge*) describes several common design patterns that are involved in creating architectural patterns and application architecture in general.
+
+* Chapter 2 (*Overview of Several Common Patterns*) gives the reader an introduction to architectural patterns and how they are applied in Android.
+
+* Chapter 3 (*Tools, Testing and Libraries*) is a brief introduction into tools, testing and library usage.
+
+* Chapter 4 (*The Example App*) lays out the reasoning behind the requirements of the example application and how quality measurement will be done.
+
+Part two concerns itself with the implementation of the example application.
+
+* Chapter 5 (*Building the Example App*) documents how the application was made and which considerations and problems arose while developing it.
+
+* Chapter 6 (*Practical Analysis of Design Patterns*) will compare the various architectures that were implemented.
