@@ -7,7 +7,7 @@ Readers are encouraged to follow along and develop the sample application as wel
 
 ## Online repository
 
-## The Google Way
+## The Google way
 
 ### Project setup
 
