@@ -12,4 +12,4 @@ pandoc <(cat paper/*.md) -o out/outpandoc.pdf --toc -V papersize="a4paper" --fil
 
 #Merge paper and cover
 #pdfunite Cover.pdf out/outpandoc.pdf out/final.pdf
-pdfunite Cover.pdf out/out.pdf out/final.pdf
+pdfunite Cover.pdf empty.pdf out/out.pdf out/final.pdf
