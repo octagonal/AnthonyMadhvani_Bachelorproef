@@ -1,7 +1,7 @@
 
 # Overview of Several Common Patterns
 
-This chapter will take a deep dive into various common architectural patterns and a high level view of their implementation in Android. 
+This chapter will take a deep dive into various common architectural patterns and a high level view of their implementation in Android.
 
 ## Diagram conventions
 
@@ -31,15 +31,15 @@ The general philosophy behind MVC is that the model (data), view (displaying) an
 
 However under MVC components are quite linked. An interaction with the controller will make the model, providing data, communicate with the view. Because of this a requirement change for the view would require changes to the model as well. This becomes problematic when several views have to use the same model. While MVC was a big improvement on previous attempts, the coupling caused by it is quite severe.
 
-That is not to say MVC is a useless abstraction model. It lends itself quite well to the web's model of communication for example or smaller applications where such coupling is not considered an issue.
+That is not to say MVC is a useless abstraction model. It lends itself quite well to the web's model of communication for example or smaller applications where such coupling is not considered an issue. [@_techniques_fault_tolerance,]
 
 ![MVC](http://i.imgur.com/EDB1Vpo.png)
 
 ### Implementation in Android
 
-As was previously explained, the entry point in MVC is the controller and not the view. One some platforms like the web this is excellent, since all HTTP requests are handled by the server (the controller) before being displayed in the browser (the view). The mapping from theory to implementation is less straightforward in Android however: the entry point is an Intent which points to an activity (the view). 
+As was previously explained, the entry point in MVC is the controller and not the view. One some platforms like the web this is excellent, since all HTTP requests are handled by the server (the controller) before being displayed in the browser (the view). The mapping from theory to implementation is less straightforward in Android however: the entry point is an Intent which points to an activity (the view).
 
-This makes it necessary to create workarounds or not follow along with the pattern too closely. 
+This makes it necessary to create workarounds or not follow along with the pattern too closely.
 
 ![MVC Implementation](http://i.imgur.com/A48s57B.png)
 
@@ -49,17 +49,17 @@ This makes it necessary to create workarounds or not follow along with the patte
 
 ### Theory
 
-Invented in the early 1990's, when software companies were seeing a huge increase in the complexity and required responsiveness of views. Besides increasingly complex interfaces, views had to adapt much faster to business requirements as well. The invention of MVP was one that arose out of a need to further decouple a data source from the view even further. 
+Invented in the early 1990's, when software companies were seeing a huge increase in the complexity and required responsiveness of views. Besides increasingly complex interfaces, views had to adapt much faster to business requirements as well. The invention of MVP was one that arose out of a need to further decouple a data source from the view even further.
 
-MVP is essentially a variation on MVC using a different control flow. However, a big improvement on MVC is that under MVP the view has absolutely no knowledge of the model. This is what *presenter* takes care of: this component prepares data from the model for the view. While this seems like a small difference, the separation between view and model ensures that no dependencies can arise between them. This in itself is an important improvement that increases decoupling. 
+MVP is essentially a variation on MVC using a different control flow. However, a big improvement on MVC is that under MVP the view has absolutely no knowledge of the model. This is what *presenter* takes care of: this component prepares data from the model for the view. While this seems like a small difference, the separation between view and model ensures that no dependencies can arise between them. This in itself is an important improvement that increases decoupling.
 
-Unlike MVC, the entry point is the presenter. The view and the presenter have a one-on-one mapping which means they both share knowledge of each other. 
+Unlike MVC, the entry point is the presenter. The view and the presenter have a one-on-one mapping which means they both share knowledge of each other. [@_mvp_2014]
 
 ![MVP](http://i.imgur.com/t1LFdlO.png)
 
 ### Implementation in Android
 
-Using MVP, it is possible to strictly obey the pattern guidelines since user interaction originates with the view. It should also be noted that because views and presenters have a one-on-one mapping, using interfaces is not immediately required. 
+Using MVP, it is possible to strictly obey the pattern guidelines since user interaction originates with the view. It should also be noted that because views and presenters have a one-on-one mapping, using interfaces is not immediately required.
 
 ![MVP Implementation](http://i.imgur.com/PtXai2Z.png)
 
@@ -69,9 +69,9 @@ Using MVP, it is possible to strictly obey the pattern guidelines since user int
 
 ### Theory
 
-MVVM was originally developed by Microsoft in order to benefit from WPF's event driven architecture. However, on the Android platform it is possible to work with events and *observers* as well. The viewmodel is often called a *value converter* because it prepares the data from the model for the view. By using an event-based system, the viewmodel can send changes to the view (which *observes* the viewmodel's properties). However, the viewmodel should have no knowledge of the view. This has a number of important ramifications, most of all that *databinding* becomes a necessity. 
+MVVM was originally developed by Microsoft in order to benefit from WPF's event driven architecture. However, on the Android platform it is possible to work with events and *observers* as well. The viewmodel is often called a *value converter* because it prepares the data from the model for the view. By using an event-based system, the viewmodel can send changes to the view (which *observes* the viewmodel's properties). However, the viewmodel should have no knowledge of the view. This has a number of important ramifications, most of all that *databinding* becomes a necessity.
 
-Databinding synchronizes an observer with a subject by sending evented commands. These events ensure that the view and the viewmodel have exactly the same state. 
+Databinding synchronizes an observer with a subject by sending evented commands. These events ensure that the view and the viewmodel have exactly the same state.
 
 When using MVVM, the entry point is the view.
 
@@ -83,6 +83,6 @@ What this means is that unlike MVP, a viewmodel could potentially be shared with
 
 ### Implementation in Android
 
-Similar to MVP, the MVVM patterns fits quite well into Android. Of interest is also that a databinding library was recently introduced to Android which makes it much easier to use MVVM. Another important fact to note is that the Activity itself becomes nothing more than a connector to the layout resource file and the object which holds on to the Android lifecycle. 
+Similar to MVP, the MVVM patterns fits quite well into Android. Of interest is also that a databinding library was recently introduced to Android which makes it much easier to use MVVM. Another important fact to note is that the Activity itself becomes nothing more than a connector to the layout resource file and the object which holds on to the Android lifecycle.
 
 ![MVVM Implementation](http://i.imgur.com/fwVX3cm.png)
