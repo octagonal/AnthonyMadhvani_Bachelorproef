@@ -11,11 +11,27 @@ Android's great selection of profiling tools on the other hand, is often conside
 
 ### The Performance Profiling Tools
 
+Google's profiling tools are spread out over several ackages and inside the Developer Options menu on a phone itself.
+
 #### GPU and Memory Performance
 
 #### Layout Hierarchy Inspection
 
+Every added level of GUI abstraction comes attached with added overhead. This can mean anything from choppy animations to an view taking an unacceptably long time to load.
+
+While it might be possible to make a somewhat accurate mental visualization of a view's hierarchy, specialty tools are needed if any kind of accurate profiling is required. This is what the Hierarchy Viewer provides.
+
+The Hierarchy Viewer is divided into three main parts:
+
+* A device list, which makes it possible to select the device that needs to be inspected.
+* A console which provides device information.
+* The layout and tree views, which respectively visualize the view's hierarchy and its layout in the shape of a wireframe.
+
 #### Testing Battery Usage
+
+How much battery life an application consumes should be one of the most important concerns of any mobile developer. Not only will consumers be more likely to use an application if they don't notice any considerable decrease in battery life by using it: battery life can also give clues into how many resources every single component of an application needs.
+
+This is tied into several other profiling tools such as the Hierarchy Viewer and the Memory Tracers, since more resources means less battery life.
 
 ### Bandwidth Efficiency Testing
 
@@ -37,9 +53,9 @@ This thesis's source code will be tested using Robolectric because it has severa
 
 * Nearly the whole Android SDK can be faked, while providing features those libraries normally would not have such as internal inspection and reflection.
 * Excellent support for multi-threaded classes such as AsyncTasks and Handlers. This works wonderfully for testing the return value of functions off the main thread and inspecting them.
-* Non UI code need not be tested on an emulator, which can tremendously speed up the test-code-test cycle.
+* Non-UI code does not need to be tested on an emulator, which can tremendously speed up the test-develop-test cycle.
 * Add-ons are available which provide testing support for Google Play Services (among others).
-* Activity creation can be mocked out and controlled via an `ActivityController`, with `Fragment` and `View` mocking functioning in a similar manner on an `ActivityController`.  
+* Activity creation can be mocked out and controlled via an `ActivityController`, with `Fragment` and `View` mocking functioning in a similar manner on an `ActivityController` as well.  
 
 The basic workings of Robolectric are explained no better than by the authors themselves:
 
@@ -62,9 +78,11 @@ First, through a Testrunner annotation, it is declared that this test should be 
 
 Next, a new activity is instantiated (and it's XML inflated) using *setupActivity* and providing that method with a class deriving from *Activity*.
 
-Following that a `Button` and a `TextView` are then instantiated from the Acitvity's associated XML.
+Following that a `Button` and a `TextView` are instantiated from the Activity's associated XML.
 
-Finally, a button click is performed wh
+Finally, a button click is performed which the test expects to make `results` text say "Robolectric Rocks!"
+
+Besides a single Robolectric-specific Activity instantiation and an assertion at the end, this unit test is exactly the same as any regular Android code.
 
 #### JUnit
 
