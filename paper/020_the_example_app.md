@@ -27,9 +27,9 @@ only be useful as a theoretical exercise.
 
 With these requirements in mind, an example app has been chosen.
 
-## The app: WikiaArt Image Downloader
+## The app: Tumblr Image Downloader
 
-WikiArt is a website which serves as a central repository for art throughout the ages.
+Tumblr is a website which on which users can host a blog.
 Relevant to the app requirements, it has an API and contains high-resolution imagery.
 Using their API, an app will be constructed that allows users to browse art and choose a new wallpaper.
 
@@ -51,7 +51,7 @@ In order to provide examples that are both usable in the real world and easy to 
 
 ### Decoupling
 
-> Decoupling is the process of separating components so that their functionality will be more self contained.
+> Decoupling is the process of separating components so that their functionality will be more self contained. -Anders Dahnielson
 
 This is arguably the most important metric in code architecture quality. Without a decoupled architecture, code will quickly become entangled an extremely difficult to extend. It also has a number of important consequences for how easy it is to test code and avoid duplication.
 
@@ -67,7 +67,7 @@ Or would it take quite some effort:
 
 ### Testability
 
-> Testability is the degree of difficulty of testing a system.  This is determined by both aspects of the system under test and its development approach.
+> Testability is the degree of difficulty of testing a system.  This is determined by both aspects of the system under test and its development approach. -Robert .v Binder
 
 In order to make it attractive to developers to test their code, the code itself should be easy to test.
 
@@ -77,7 +77,7 @@ The relation between testability and decoupling will be examined by using Dagger
 
 ### Fault tolerance
 
-> The assumption that the system has unavoidable and undetectable faults and aims to make provisions for the system to operate correctly even in the presence of faults.
+> The assumption that the system has unavoidable and undetectable faults and aims to make provisions for the system to operate correctly even in the presence of faults. -Kishor Trivedi
 
 Fault tolerance is not just simple error handling and exception catching -it is a conscious approach to taking care of a user's data and the availability of the services an application provides.
 
@@ -87,13 +87,13 @@ Tolerance to unexpected circumstances is thus something that should be embedded 
 
 ### Extensibility
 
-> Extensibility is the capacity to extend or stretch the functionality of the development environment — to add something to it that didn't exist there before.
+> Extensibility is the capacity to extend or stretch the functionality of the development environment — to add something to it that didn't exist there before. -MSDN, What is Extensibility?
 
 While clearly related to the degree of decoupling, the extensibility of code is an important measurement on its own. Without a good system in place to extend existing code, it becomes increasingly difficult make additions that are clean, easy to test and not reliant on global state.
 
 ### Verbosity of code
 
-> Good code should be easy to comprehend at a glance. This is easier if most of the characters directly serve the purpose of the code.
+> Good code should be easy to comprehend at a glance. This is easier if most of the characters directly serve the purpose of the code. -Nathan Long
 
 Due to Java's age, a lot of "ceremony" is sometimes required to achieve what a modern language can do more easily. This is especially evident when using an older version of Java like Android does. While certain projects want to remove Java from the picture entirely, such as Kotlin, there is no evidence to support that Google will move away from Java anytime soon. So improving on the efficiency and speed of Android development using standard Java is a top priority. This becomes all the more important when deciding how a whole application should be structured.
 

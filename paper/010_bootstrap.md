@@ -3,7 +3,8 @@
 
 ## Building Blocks
 
-Even though non-architectural design patterns are not the focus here, it is still nessecary to know a couple of basic patterns in order to be able to implement any architecture.
+Even though non-architectural design patterns are not the focus here, it is still nessecary to know at least these basic patterns in order to be able to implement any architecture.
+
 They will be briefly explained here in a practical way.
 
 ### The Observer Pattern
@@ -37,7 +38,7 @@ Say for example, an object called `Weather` exists that notifies anyone listenin
     weather.setLasterWeather("It's raining")
     weather.notifyObservers()
 
-Communication in this way allows for a high degree of decoupling while still providing certainty about being notified.
+Communication in this way allows for a high degree of decoupling while still providing certainty about being notified.[@gamma_design_1994]
 
 ### The Mediator Pattern
 
@@ -51,7 +52,7 @@ The mediator pattern is another pattern whose main benefit is increased decoupli
            ChangeBrush(brushType)
          }
 
-A `mediator` will have one or more `components` that need to be informed about changes to any other `component` whenever one `component` sends a message. Where the observer pattern will have a *one to many* relation, the mediator pattern will have a *one to one to many* relation. Another big difference between the two is that by using the observer pattern, direct communication between objects still exists. Using a mediator, they become unlinked.
+A `mediator` will have one or more `components` that need to be informed about changes to any other `component` whenever one `component` sends a message. Where the observer pattern will have a *one to many* relation, the mediator pattern will have a *one to one to many* relation. Another big difference between the two is that by using the observer pattern, direct communication between objects still exists. Using a mediator, they become unlinked.[@gamma_design_1994]
 
      Paint extends IComponent
          void ChangeState(PaintColor){
@@ -77,7 +78,7 @@ The command pattern encapsulates methods using an object in order to provide a s
     interface ICommand
         void execute()
 
-One of the biggest benefits is being able to queue a list of commands and letting another object execute them one by one. It would for example be possible to place a series of various network calls (loading images, loading HTML) in a list, and letting the object that receives those commands choose wether or not to request them one by one or in parallel.
+One of the biggest benefits is being able to queue a list of commands and letting another object execute them one by one. It would for example be possible to place a series of various network calls (loading images, loading HTML) in a list, and letting the object that receives those commands choose wether or not to request them one by one or in parallel.[@gamma_design_1994]
 
     class Command extends ICommand
       public Command(Sum sum, int one, int two)
@@ -87,7 +88,7 @@ One of the biggest benefits is being able to queue a list of commands and lettin
       }
 
 
-Since all commands are sent using the same type of class, it would be trivial to for example implement an `undo` method as well. Using this pattern, implementing a calculator that can easily do and undo operations becomes trivial.
+Since all commands are sent using the same type of class, it would be trivial to for example implement an `undo` method as well. Using this pattern, implementing a calculator that can easily do and undo operations becomes trivial.[@nystrom_design]
 
     class SumCommand extends ICommand
       public Command(int total, int one, int two)
