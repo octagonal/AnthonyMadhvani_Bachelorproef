@@ -230,7 +230,7 @@ The actual UI markup also has some special characteristics:
 
 The best part about understanding Android's Data Binding Library and how it relates to views is that as a consequence the essence of a view in MVVM on Android also becomes clear: simple, easy to understand XML files which will eagerly accept and display any data handed to them.[@_data_binding]
 
-![Despite little overdraw, a performance hit was noticeable](http://i.imgur.com/T6IvLyN.png)
+![(Fig, 44.1) Despite little overdraw, a performance hit was noticeable](http://i.imgur.com/T6IvLyN.png)
 
 ##### ViewModel and Activity Initialization
 
@@ -289,7 +289,7 @@ Afterwards the `Image` variable declared in the View is simply instantiated.
 
 * Special attention should be paid to `getCaption()`: a field call from the model not available from the view is called (`getAuthor()`), decreasing the knowledge the view has which keeps it "dumb" as intended.
 
-![Image caching logic is shared by using the same viewmodel, only the view is different here](http://i.imgur.com/qgpl725.png)
+![(Fig, 46.1) Image caching logic is shared by using the same viewmodel, only the view is different here](http://i.imgur.com/qgpl725.png)
 
 ### Conclusion
 
@@ -364,7 +364,7 @@ Subscribers must also register themselves to the `EventBus`. As per the develope
         super.onStop();
     }
 
-![Thinking in React: high level Store/View communication flow (dispatcher not pictures)](http://i.imgur.com/bx0nFRG.png)
+![(Fig, 49.1) Thinking in React: high level Store/View communication flow (dispatcher not pictures)](http://i.imgur.com/bx0nFRG.png)
 
 #### Setting up actions
 
@@ -389,7 +389,7 @@ This event is then dispatched to any store that is interested in this type.
         EventBus.getDefault().post(new PictureStoreChangedEvent());
     }
 
-![Flux's flow in practice](http://i.imgur.com/n9d80Fe.png)
+![(Fig, 50.2) Flux's flow in practice](http://i.imgur.com/n9d80Fe.png)
 
 #### Deciding which type of view should be used
 

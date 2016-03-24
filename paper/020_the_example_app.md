@@ -37,7 +37,7 @@ Using their API, an app will be constructed that allows users to browse art and 
 
 The following figure shows how the user will interact with the application and go from one activity to the next.
 
-![Application flow](http://i.imgur.com/EEnvyqK.png)
+![(Fig, 22.1) Application flow](http://i.imgur.com/EEnvyqK.png)
 
 ## Quality measurement
 
@@ -59,11 +59,11 @@ A simple test can be performed to find out how decoupled the code is: attempt to
 
 Would it be possible to describe the general architecture with just a well defined components:
 
-![Decoupled code](http://i.imgur.com/F4jKsG1.png)
+![(Fig, 23.1) Decoupled code](http://i.imgur.com/F4jKsG1.png)
 
 Or would it take quite some effort:
 
-![Entangled code](http://i.imgur.com/AXj0njX.png)
+![(Fig, 23.2) Entangled code](http://i.imgur.com/AXj0njX.png)
 
 ### Testability
 

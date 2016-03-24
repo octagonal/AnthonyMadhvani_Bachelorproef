@@ -23,7 +23,7 @@ The GPU overdraw tool simply displays how many times a specific part of a layout
 
 The level of overdraw is visualized in colors, using this scale:
 
-![GPU Overdraw, image property of Google](http://developer.android.com/images/tools/performance/debug-gpu-overdraw/gettingstarted_image03.png)
+![(Fig, 26.1) GPU Overdraw, image property of Google](http://developer.android.com/images/tools/performance/debug-gpu-overdraw/gettingstarted_image03.png)
 
 * True color: No overdraw
 * Blue: Overdrawn once
@@ -45,7 +45,7 @@ The Hierarchy Viewer is divided into three main parts:
 * A console which provides device information.
 * The layout and tree views, which respectively visualize the view's hierarchy and its layout in the shape of a wireframe.
 
-![Easily inspecting the Settings App using Hierarchy Viewer](http://i.imgur.com/Jw18sjq.png?1)
+![(Fig, 27.1) Easily inspecting the Settings App using Hierarchy Viewer](http://i.imgur.com/Jw18sjq.png?1)
 
 #### Memory Performance using Memory Monitor
 
@@ -56,7 +56,7 @@ Enabling the monitor takes a few steps:
 
 The monitor view should now be visible and outputting information.
 
-![Memory Monitor, image copyright Google](http://developer.android.com/images/tools/performance/memory-monitor/gettingstarted_image003.png)
+![(Fig, 28.1) Memory Monitor, image copyright Google](http://developer.android.com/images/tools/performance/memory-monitor/gettingstarted_image003.png)
 
 In order to get a good overview of how much memory an application is currently consuming, the Memory Monitor tool is excellent.
 
@@ -64,7 +64,7 @@ In an easy to parse graph it displays the current amount of memory and the amoun
 
 #### Testing Battery Usage
 
-![A common Battery Historian view](http://41.media.tumblr.com/b762b0f39b2984ac7b7190634f4a058c/tumblr_np7q6t0HV51uvcr50o1_1280.png)
+![(Fig, 28.2) A common Battery Historian view](http://41.media.tumblr.com/b762b0f39b2984ac7b7190634f4a058c/tumblr_np7q6t0HV51uvcr50o1_1280.png)
 
 How much battery life an application consumes should be one of the most important concerns of any mobile developer. Not only will consumers be more likely to use an application if they don't notice any considerable decrease in battery life by using it[@ferreira_understanding_2011]: battery life can also give clues into how many resources every single component of an application needs.
 
@@ -116,7 +116,7 @@ Requirements:
 
 Using this configuration it's possible to capture traffic directly on a device and view it at a later time. There are a lot of "ifs and buts" however: most phones are not rooted and the interface is qute sluggish.
 
-![SharkReader: most likely not the greatest interface ever. Image copyright lanrat.com](http://lh4.ggpht.com/_55LVV0RexIc/TLuZsrqOIpI/AAAAAAAABaQ/mPA2_oqZrKs/s400/snap20101017_174413.png)
+![(Fig, 30.1) SharkReader: most likely not the greatest interface ever. Image copyright lanrat.com](http://lh4.ggpht.com/_55LVV0RexIc/TLuZsrqOIpI/AAAAAAAABaQ/mPA2_oqZrKs/s400/snap20101017_174413.png)
 
 Luckily a better alternative exists: using a computer as a wireless hotspot.
 
@@ -127,11 +127,11 @@ Requirements:
 
 Once the device is connected to the hotspot, enter `ip.src == *Device IP*` in Wireshark's filter bar. This will show every package orginating from the phone in question.
 
-![Viewing TCP conversations and a TCP flow graph of a connected device](http://i.imgur.com/D3ppotK.png)
+![(Fig, 30.2) Viewing TCP conversations and a TCP flow graph of a connected device](http://i.imgur.com/D3ppotK.png)
 
 By using the `tshark` command in the console, it's also quite easy to directly view GET requests.
 
-![Viewing GET requests using tshark](http://i.imgur.com/v5aHwsR.png?1)
+![(Fig, 31.1) Viewing GET requests using tshark](http://i.imgur.com/v5aHwsR.png?1)
 
 It should also be noted that tshark has deep knowledge of a very large amount of TCP protocols and not just HTTP, like for example database-specific MongoDB TCP calls.[@evans_tcpdump]
 

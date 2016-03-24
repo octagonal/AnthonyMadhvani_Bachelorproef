@@ -70,3 +70,5 @@ Architecture  | Performance | Lifecycle management | Testability | Decoupling | 
 MVP Pattern  | Great | Acceptable | Acceptable | Quite poor | Quite poor
 MVVM Pattern | Acceptable | Acceptable | Great | Great| Quite poor
 Flux Pattern | Great | Great | Acceptable | Great| Quite poor
+
+*(Table,54.1)*

@@ -1,0 +1,34 @@
+
+
+
+
+--|--
+--|--|--
+ADB | Android Developer Bridge
+ADM | Android Device Monitor, provides additional tooling for Android
+Android Studio | An IDE created for the development of Android applications
+Annotations | Meta-information appended to code structures
+Antipattern | Code smell, a code structure which may indicate unsound coding practices
+Architectural Pattern | An overarching design pattern that decides how an application is architected
+Asynchronous function | A function which does not block the execution of a program
+Behavioral Pattern | A design patterns that decides how an application is built
+Boilerplate | Initialization code deemed repetitive
+Dagger | A dependency injection library
+Dependency graph | A directed graph declaring how one objects possibly depends on other objects
+Dependency injection | Declaratively requesting code which has a certain behavior instead of concrete classes and objects
+Design Pattern  |  A structured way of solving a common problem in software
+# Figures, Tables and Code Samples
+Functional programming | Computation as pure mathematical functions without side effects
+Generated code | Code created without a programmer's direct involvement
+Global state | State accessable by most every part of an application
+# Glossary
+GoF | Shorthand for "Design Patterns: Elements of Reusable Object-Oriented Software", a well known book on design patterns
+Overhead | Performance-decreasing load which is not directly associated with the true function of a component
+RxJava | A library for developing in a functional reactive way
+Square | A software development company
+Square | A software development company
+Term  | Definition
+Tumblr | A blogging website
+Type  | Description | Location
+Unit testing | Testing the functionality of a single component in isolation
+View | A rectangular on-screen object which handles user interaction and layout

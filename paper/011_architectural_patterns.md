@@ -9,7 +9,7 @@ Rather, architectural patterns are a way of *structuring and organizing code*. T
 
 ## Diagram conventions
 
-![Conventions](http://i.imgur.com/RSznqSx.png)
+![(Fig, 14.1) Conventions](http://i.imgur.com/RSznqSx.png)
 
 a) A dependency indicates that one component *depends* on the other to provide it with data.
 
@@ -39,7 +39,7 @@ However under MVC components are quite linked. An interaction with the controlle
 
 That is not to say MVC is a useless abstraction model. It lends itself quite well to the web's model of communication for example or smaller applications where such coupling is not considered an issue. [@_techniques_fault_tolerance,]
 
-![MVC](http://i.imgur.com/EDB1Vpo.png)
+![(Fig, 15.1) MVC](http://i.imgur.com/EDB1Vpo.png)
 
 ### Implementation in Android
 
@@ -47,7 +47,7 @@ As was previously explained, the entry point in MVC is the controller and not th
 
 This makes it necessary to create workarounds or not follow along with the pattern too closely or use a very loose interpretation of what consitutes MVC.
 
-![MVC Implementation](http://i.imgur.com/A48s57B.png)
+![(Fig, 16.1) MVC Implementation](http://i.imgur.com/A48s57B.png)
 
 ## MVP
 
@@ -63,13 +63,13 @@ MVP is essentially a variation on MVC using a different control flow. However, a
 
 Unlike MVC, the entry point is the presenter. The view and the presenter have a one-on-one mapping which means they both share knowledge of each other. [@_mvp_2014]
 
-![MVP](http://i.imgur.com/t1LFdlO.png)
+![(Fig, 16.2) MVP](http://i.imgur.com/t1LFdlO.png)
 
 ### Implementation in Android
 
 Using MVP, it is possible to strictly obey the pattern guidelines since user interaction originates with the view. It should also be noted that because views and presenters have a one-on-one mapping, using interfaces is not immediately required.
 
-![MVP Implementation](http://i.imgur.com/PtXai2Z.png)
+![(Fig, 17.1) MVP Implementation](http://i.imgur.com/PtXai2Z.png)
 
 ## MVVM
 
@@ -89,13 +89,13 @@ Model-view-viewmodel is perhaps the most careful in terms of component communica
 
 What this means is that unlike MVP, a viewmodel could potentially be shared with many views. This strict separation allows for a very decoupled architecture. Contrast this with a view-presenter relationship where the view is still responsible for manipulating information and state.[@mvvm]
 
-![MVVM](http://i.imgur.com/xWkLIte.png)
+![(18.1) MVVM](http://i.imgur.com/xWkLIte.png)
 
 ### Implementation in Android
 
 Similar to MVP, the MVVM patterns fits quite well into Android. Of interest is also that a databinding library was recently introduced to Android which makes it much easier to use MVVM. Another important fact to note is that the Activity itself becomes nothing more than a connector to the layout resource file and the object which holds on to the Android lifecycle.
 
-![MVVM Implementation](http://i.imgur.com/fwVX3cm.png)
+![(Fig, 18.2) MVVM Implementation](http://i.imgur.com/fwVX3cm.png)
 
 ## Flux
 
@@ -128,7 +128,7 @@ To give an example: a *CatModel* would have a *getCat(int id)* method returning 
 
 * Actions: Views send out updates and request using Actions to the centrail dispatcher
 
-![Flux](http://i.imgur.com/ET5qI3J.png)
+![(Fig, 19.1) Flux](http://i.imgur.com/ET5qI3J.png)
 
 #### Implementation in Android
 
@@ -140,6 +140,6 @@ Despite its apparent complexity, Flux can easily be implemented in Android.
 * Stores are pure Java classes which independently decide how to parse actions and change data caches accordingly
 * Actions in this interpretation are simply new events dispatched to the store
 
-![Flux Implementation](http://i.imgur.com/qWsAex6.png)
+![(Fig, 20.1) Flux Implementation](http://i.imgur.com/qWsAex6.png)
 
 *Note: unlike other flowcharts in this chapter, some details such as interfaces have been left out for clarity.*
